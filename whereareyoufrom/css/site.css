@@ -1,10 +1,12 @@
 :root {
-  --bg-color: #ffffff;
-  --select-color: #000000;
+  --bg-color: #fff;
+  --select-color: #000;
+  --text-color: #ff0;
 }
 
 ::selection {
-  background-color: var(--select-color); /* 드래그했을 때의 배경색 (주황색 예시) */          /* 드래그했을 때의 글자색 (흰색 예시) */
+  background-color: var(--select-color);
+  color: var(--text-color);
 }
 
 body {
@@ -13,27 +15,7 @@ body {
     font-family: 'Noto Sans KR', sans-serif;
     margin: 0;
     padding: 0;
-    transition: background-color 1s steps(8); /* 배경색과 글자색이 동시에 바뀌도록 설정 */
-
-    position: relative; /* 가상 요소의 기준점 */
-}
-
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    pointer-events: none; /* 클릭을 방해하지 않도록 설정 */
-    
-    /*background-image: url('https://media.giphy.com/media/YIWkugmPymNVK/giphy.gif'); 
-    background-size: cover; /* GIF가 화면 전체를 덮도록 설정 */
-    
-    /* 아래 배경색과 자연스럽게 섞이게 만듦 */
-    mix-blend-mode: overlay; 
-    opacity: 0.8; /* 지직거리는 정도 조절 (0.1 ~ 1.0) */
-    z-index: 1;
+    transition: background-color 1s steps(8);
 }
 
 a {
@@ -53,10 +35,8 @@ a {
   align-items: center; 
 }
 
-.topnav {
-    /*text-decoration: underline wavy blue;*/
+header {
     color: rgb(255, 255, 0);
-    font-family: Arial, sans-serif;
     font-size: 12px;
     text-align: justify;
     padding: 14px 0px 18px;
@@ -74,7 +54,6 @@ a {
   
   /* 디자인을 위한 추가 속성 (예시) */
   color:rgb(255, 255, 0);
-  transition: color 1s linear;
   font-size: 11px;
 }
 

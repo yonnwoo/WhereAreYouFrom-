@@ -8,6 +8,13 @@ function updateThemeByTime() {
   const root = document.documentElement; 
   
   root.style.setProperty('--bg-color', `hsl(0, 0%, ${brightness}%)`);
+  if (brightness > 50) {
+    root.style.setProperty('--select-color', '#111111');
+    root.style.setProperty('--text-color', '#ffff00');
+  } else {
+    root.style.setProperty('--select-color', '#fff');
+    root.style.setProperty('--text-color', '#0000ff');
+  }
 }
 
 updateThemeByTime();
