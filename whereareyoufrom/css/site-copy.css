@@ -10,8 +10,7 @@
 }
 
 body {
-    color: rgb(0,0,255);
-    background-color: var(--bg-color);
+    background-color: #aaa;
     font-family: 'Noto Sans KR', sans-serif;
     margin: 0;
     padding: 0;
@@ -19,9 +18,10 @@ body {
 }
 
 a {
-    color:rgb(255, 255, 0);
+    color: rgb(255,255,0);
     text-decoration: underline 1px blue;
     display: inline-block;
+    z-index: 2;
 }
 
 .header-container {
@@ -36,14 +36,14 @@ a {
 }
 
 header {
-    color: rgb(255, 255, 0);
+    color: 000;
     font-size: 12px;
     text-align: justify;
     padding: 14px 0px 18px;
 }
 
 .article-container {
-  min-height: 600px; /* 글이 너무 짧을 때 최소 높이 */
+  min-height: 800px; /* 글이 너무 짧을 때 최소 높이 */
   max-height: 800px; /* 글이 아무리 길어도 800px까지만 커짐 */
   overflow-y: auto;
   box-sizing: border-box; /* 3. 패딩과 테두리를 높이에 포함 (선택이지만 권장) */
@@ -52,8 +52,8 @@ header {
 
   
   /* 디자인을 위한 추가 속성 (예시) */
-  color:rgb(255, 255, 0);
-  font-size: 11px;
+  color:000;
+  font-size: 15px;
 }
 
 /* 🔥 1. 첫 번째 단의 설정 (유연하게 남은 공간 차지) */
@@ -73,7 +73,7 @@ article:not(:first-child):not(:last-child) {
 }
 
 hr {    
-    border: dashed 1px rgb(255, 255, 0);
+    border: dashed 1px ;
     padding: 0;
     margin: 0;
 }
@@ -86,9 +86,6 @@ hr {
 
 a {
     animation: jump 3s infinite alternate;
-}
-
-main {
 }
 
 @keyframes jump {
@@ -106,7 +103,7 @@ img {
   right: 2%;
   filter: grayscale(0%) contrast(100%) brightness(1.2);
   opacity: 0.8;
-  z-index: 10;
+  z-index: 0;
 }
 img:hover {
   opacity: 0.3; 
@@ -147,6 +144,7 @@ img:hover {
   border-bottom: 1px solid blue;
   height: 10px;
   transform: translateY(4px);
+  z-index: -1;
 }
 .flexible-line {
   /* 두 선 모두에게 flex-grow: 1을 주면, 
@@ -166,3 +164,15 @@ a .footer {
   height: 1000px; /* 픽셀로 엄청나게 큰 값을 주거나 */
   /* height: 300vh; /* 브라우저 화면 높이의 3배(300%)를 줄 수도 있습니다. */
 }
+.background-iframe {
+    position: fixed;       /* 화면에 고정 (스크롤해도 위치 유지) */
+    top: 0;
+    left: 0;
+    width: 100vw;          /* 화면 너비 100% */
+    height: 100vh;         /* 화면 높이 100% */
+    z-index: 0;           /* 다른 콘텐츠들보다 완전히 뒤로 배치 */
+    border: none;          /* 테두리 제거 */
+    pointer-events: 1; /* iframe이 클릭 등 이벤트를 받도록 설정 (선택사항) */
+    opacity: 0.3;          /* 선택사항: 배경이 너무 튀지 않게 투명도 조절 */
+    filter: grayscale(100%) contrast(100%) brightness(1); /* 선택사항: 흑백, 명암, 밝기, 블러, 세피아 효과 추가 */
+  }
