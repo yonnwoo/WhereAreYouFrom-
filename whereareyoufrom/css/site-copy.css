@@ -10,7 +10,7 @@
 }
 
 body {
-    background-color: #aaa;
+    background-color: #fff;
     font-family: 'Noto Sans KR', sans-serif;
     margin: 0;
     padding: 0;
@@ -18,7 +18,7 @@ body {
 }
 
 a {
-    color: rgb(255,255,0);
+    color: blue;
     text-decoration: underline 1px blue;
     display: inline-block;
     z-index: 2;
@@ -39,7 +39,7 @@ header {
     color: 000;
     font-size: 12px;
     text-align: justify;
-    padding: 14px 0px 18px;
+    padding: 0px;
 }
 
 .article-container {
@@ -53,7 +53,8 @@ header {
   
   /* 디자인을 위한 추가 속성 (예시) */
   color:000;
-  font-size: 15px;
+  font-size: 18px;
+  line-height: 1.7;
 }
 
 /* 🔥 1. 첫 번째 단의 설정 (유연하게 남은 공간 차지) */
@@ -73,7 +74,7 @@ article:not(:first-child):not(:last-child) {
 }
 
 hr {    
-    border: dashed 1px ;
+    border: dashed 1px blue; ;
     padding: 0;
     margin: 0;
 }
@@ -99,14 +100,14 @@ a {
 
 img {
   position: fixed;
-  bottom: 8%;
-  right: 2%;
+  bottom: 3%;
+  right: 0%;
   filter: grayscale(0%) contrast(100%) brightness(1.2);
   opacity: 0.8;
   z-index: 0;
 }
 img:hover {
-  opacity: 0.3; 
+  opacity: 0.2; 
 }
 .fill-blank-container {
   /* 🔥 핵심 1: 가로로 나란히 배치하기 위한 flex */
